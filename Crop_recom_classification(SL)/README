@@ -1,0 +1,87 @@
+# 🌾 Crop Recommendation System
+
+A machine learning project that predicts the most suitable crop to cultivate based on environmental and soil conditions like Nitrogen, Phosphorus, Potassium, temperature, humidity, pH, and rainfall.
+
+---
+
+## 📁 Dataset
+
+- Source: [Kaggle - Crop Recommendation Dataset](https://www.kaggle.com/datasets/madhuraatmarambhagat/crop-recommendation-dataset)
+- Downloaded using `kagglehub` for automation and reproducibility.
+
+---
+
+## 🚀 Project Goals
+
+- Build an ML model that can recommend the best crop based on soil and climate features.
+- Evaluate and compare different classification models.
+- Tune hyperparameters and create a reusable ML pipeline.
+- Save and export the best model for deployment.
+
+---
+
+## 📌 Features Used
+
+| Feature     | Description                           |
+|-------------|---------------------------------------|
+| N           | Nitrogen content in soil              |
+| P           | Phosphorus content in soil            |
+| K           | Potassium content in soil             |
+| temperature | Temperature in Celsius                |
+| humidity    | Relative humidity in %                |
+| ph          | pH value of the soil                  |
+| rainfall    | Rainfall in mm                        |
+
+---
+
+## 🛠️ Libraries & Tools
+
+- Python, Pandas, NumPy
+- Scikit-learn
+- Matplotlib, Seaborn
+- KaggleHub (for downloading dataset)
+- Joblib (for saving model)
+
+---
+
+## 🔍 Exploratory Data Analysis (EDA)
+
+- Checked data types and missing values.
+- Explored crop distribution and feature correlations using heatmaps and count plots.
+
+---
+
+## 🧠 Models Trained
+
+| Model               | Preprocessing         | Remarks                           |
+|---------------------|-----------------------|-----------------------------------|
+| Logistic Regression | StandardScaler        | Baseline performance              |
+| Decision Tree       | Raw features          | Simple, interpretable             |
+| Random Forest       | Raw features          | Better performance, robust        |
+| K-Nearest Neighbors | StandardScaler        | Tuned using GridSearchCV          |
+
+✅ **Best model**: K-Nearest Neighbors with `n_neighbors=5` and `weights='uniform'`
+
+---
+
+## 🧪 Evaluation Metrics
+
+- Accuracy
+- Classification Report (Precision, Recall, F1-score)
+
+---
+
+## ⚙️ Pipeline & Export
+
+- Built a complete ML pipeline using `make_pipeline`.
+- Saved model with `joblib` for future predictions:
+  ```python
+  joblib.dump(pipeline, 'crop_recommendation_model.pkl')
+
+
+## 📌 Future Work
+- Add web UI with Flask or Streamlit for real-time crop prediction.
+- Include geographic location (latitude/longitude) in recommendation logic.
+- Deploy the model as an API.
+
+  
